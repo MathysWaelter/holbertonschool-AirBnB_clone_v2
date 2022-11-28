@@ -20,8 +20,8 @@ def HBNB():
 @app.route("/c/<text>", strict_slashes=False)
 def HBNB_text(text):
     """print HBNB in /hbnb"""
-    texts = text.replace('_', ' ')
-    return texts
+    text = text.replace('_', ' ')
+    return f"C {text}"
 
 
 if __name__ == '__main__':
