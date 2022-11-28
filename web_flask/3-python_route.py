@@ -23,7 +23,8 @@ def HBNB_text(text):
     text = text.replace('_', ' ')
     return "C {}".format(text)
 
-@app.route("/python", defaults={'text':'is cool'})
+
+@app.route("/python/", defaults={'text': 'is cool'})
 @app.route("/python/<text>", strict_slashes=False)
 def display_python(text):
     """print text variable and replace character"""
