@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-
+"""Import flask and print with method"""
 from flask import Flask
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/", strict_slashes=False)
 def hello_HBNB():
     """print Hello HBNB"""
     return "<p>Hello HBNB!</p>"
