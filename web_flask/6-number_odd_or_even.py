@@ -48,10 +48,10 @@ def template(n):
 def even_or_odd(n):
     """print html page if is integer"""
     if (n % 2) == 0:
-        text = "{0} is Even".format(n)
+        text = "{} is Even".format(n)
         return render_template('6-number_odd_or_even.html', n=text)
     else:
-        text = "{0} is Odd".format(n)
+        text = "{} is Odd".format(n)
         return render_template('6-number_odd_or_even.html', n=text)
 
 
