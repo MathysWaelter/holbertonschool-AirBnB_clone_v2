@@ -15,7 +15,7 @@ class State(BaseModel, Base):
     __tablename__ = "states"
     name = Column(String(128), nullable=False)
 
-    if (getenv("HBNB_TYPE_STORAGE") == 'db'):
+    if getenv("HBNB_TYPE_STORAGE") == 'db':
         cities = relationship("City", cascade="all,delete", backref="state")
     else:
         @property
@@ -24,7 +24,7 @@ class State(BaseModel, Base):
             City instances with state_id equals to the current State.id """
             from models import storage
             allcities = storage.all(City)
-            c = {}
+            c = []
             for k, v in allcities.items():
                 if v.state_id == self.id:
                     c[k] = v
